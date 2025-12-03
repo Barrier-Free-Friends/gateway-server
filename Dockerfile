@@ -2,6 +2,6 @@ FROM bellsoft/liberica-openjdk-alpine:21
 ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} app.jar
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar", "-DJWT_SECRET=${ENV_JWT_SECRET}"]
 
 EXPOSE 3000
