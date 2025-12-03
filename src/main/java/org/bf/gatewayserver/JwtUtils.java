@@ -36,7 +36,6 @@ public class JwtUtils {
 
     public boolean validateToken(String token) throws Exception {
         try {
-            log.info("jwt secret key: " + key.toString());
             Jwts.parser()
                     .verifyWith(key)
                     .build()
