@@ -3,6 +3,7 @@ package org.bf.gatewayserver;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.server.reactive.ServerHttpRequest;
@@ -11,6 +12,7 @@ import org.springframework.web.server.ServerWebExchange;
 
 import javax.crypto.SecretKey;
 
+@Slf4j
 @Component
 public class JwtUtils {
     public static final String AUTHORIZATION_HEADER = HttpHeaders.AUTHORIZATION;
@@ -34,6 +36,7 @@ public class JwtUtils {
 
     public boolean validateToken(String token) throws Exception {
         try {
+            log.info("jwt secret key: " + key.toString());
             Jwts.parser()
                     .verifyWith(key)
                     .build()
