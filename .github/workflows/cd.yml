@@ -34,7 +34,7 @@ jobs:
            chmod +x gradlew
            ./gradlew bootJar
            docker build \
-          --build-arg ENV_JWT_SECRET=${{ secrets.ENV_JWT_SECRET }} \
+          --build-arg ARG_JWT_SECRET=${{ secrets.ENV_JWT_SECRET }} \
           -t $IMAGE .
            echo "IMAGE_URI=$IMAGE" >> $GITHUB_ENV
 
