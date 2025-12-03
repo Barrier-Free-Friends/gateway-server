@@ -23,3 +23,6 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://34.47.77.34:3150/eureka/
+
+jwt:
+  secret: ${JWT_SECRET}
