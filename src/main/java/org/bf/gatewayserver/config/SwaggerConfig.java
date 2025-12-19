@@ -50,4 +50,13 @@ public class SwaggerConfig {
                 .pathsToMatch("/v1/points/**")
                 .build();
     }
+
+    @Bean
+    public GroupedOpenApi spotAPI() {
+        return GroupedOpenApi.builder()
+                .group("spot-api")
+                .displayName("SPOT API")
+                .pathsToMatch("/v1/spot/**")
+                .build();
+    }
 }

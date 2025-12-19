@@ -20,7 +20,6 @@ public class CorsConfig implements WebFluxConfigurer {
                 .allowedHeaders("*")
 
                 // 자격 증명(쿠키, 인증 헤더) 허용 여부.
-                // allowedOrigins가 "*"일 때는 보안상의 이유로 false로 설정해야 합니다.
                 .allowCredentials(false)
 
                 // preflight 요청 캐시 시간
